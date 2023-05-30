@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf=8"/>
+        <title> Registration </title>
+        <style type="text/css">
+          label{
+            float: left;
+            width: 120px;
+            background-color: aliceblue;
+          }
+          fieldset{
+            background-color: rgb(182, 226, 226);
+          }
+          body{
+            background-color: rgb(211, 210, 178);
+          }
+        </style>
+    </head>
+    
+    <body>
+
+            
+        <form action="Registered.html" method="post" class="form">
+          <fieldset>
+            <legend>Fill in Your Details:</legend>
+            <div class="form-group">
+           <label>Firstname:</label> <input type="text" name="name" class="fname" required> <br><br>
+            </div>
+           <label>Surname:</label>          <input type="text" name="" class="surname" required> <br><br>
+           <label>Email:</label>            <input type="email" name="" class="mail" required> <br><br>
+           <label>Data of Birth:</label>    <input type="date" name="" required> <br><br>
+           <label>Sex:</label>              <input type="checkbox" name="" class="male"> Male <input type="checkbox" name="gen" class="female">female <br><br>
+           <label>Password:</label>         <input type="password" name="" class="pwd" required> <br><br>
+           <label>District:</label> 
+			<select>
+				<option>---select---</option>
+				<option>Chitipa</option>
+				<option>Rumphi</option>
+				<option>Mzuzu</option>
+				<option>Karonga</option>
+				<option>Mzimba</option>
+				<option>Lilongwe</option>
+        <option>Blantyre</option>
+				</select> <br><br>
+                                            <button type="submit">Register</button>
+                                            <button type="reset">Reset</button>
+        </fieldset>
+        </form>
+
+        <script>
+          let form = document.querySelector('.form');
+          let fname = document.querySelector('.fname');
+          let surname = document.querySelector('.surname');
+          let pswd = document.querySelector('.pwd');
+          let male = document.querySelector('.male');
+          let female = document.querySelector('.female');
+          let district = document.querySelector('select');
+
+          form.onsubmit = function(e){
+            e.preventDefault();
+
+            //isNaN() return true is the pased data is a string else return false
+            if (!isNaN(fname.value)) {
+              alert('Name must be textual data');
+              return;
+            }
+
+            if (fname.value.length < 2) {
+              alert('Name cannot be a single character');
+              return;
+            }
+
+            if (!isNaN(surname.value)) {
+              alert('Surname must be textual data');
+              return;
+            }
+
+            if (surname.value.length < 2) {
+              alert('Surname cannot be a single character');
+              return;
+            }
+
+            if(!male.checked && !female.checked){
+              alert('Make sure you select your gender');
+              return;
+            }
+
+            if(pswd.value.length < 4 ){
+              alert('Password is too short');
+              return;
+            }
+
+            if(district.value === '---select---' || district.value === ''){
+              alert("please select district");
+              return;
+            }
+
+            alert('The form was filled properly, at this point it could be submitted!');
+            return;
+          }
+        </script>
+    </body>
+
+</html>

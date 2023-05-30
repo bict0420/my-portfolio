@@ -1,0 +1,66 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf=8"/>
+        <title>Hezron Chavula</title>
+        <link rel="stylesheet" href="style.css">
+
+  
+</head>
+    <body background="mk.jpg">
+        <fieldset>
+        <div>
+            <h2 class="greet">Good morning</h2>
+            
+            <h1> HEZRON CHAVULA, BICT0420 </h1>
+                <form action="projects.html" method="POST" translate="yes" >
+                    <button><a href="Intro.html">Introduction</a></button>
+                    <button><a href="projects.html">Featured Projects</a></button>
+                    <button><a href="skills.html">Skills</a></button>
+                    <button><a href="regform.html">Register here</a></button>
+                </form>
+        </div>
+    
+                <br></br>
+        <center>
+            <footer>
+                &copy;hezronsavia2@gmail.com (0991896718)
+            </footer>
+        </center>
+    </fieldset>
+    <a href="projects.html" onMouseOver="changeImg()"></a>  <br><br>
+
+    <script>
+
+        var index = 0;
+        var images = ['hc.jpg', 'hn.jpg', 'mc.jpg', 'mg.jpg', 'mk.jpg', 'sa.jpg'];
+
+        let targetElement = document.querySelector('body');
+
+        /** change background image every 5 seconds */
+        setInterval(() => {
+
+            (index < images.length - 1) ? index++ : index = 0;  //reset position to 0 when we reach end of array
+            targetElement.style.background = `url(${images[index]})`;
+        }, 5000);
+
+        let h2 = document.querySelector('.greet');
+
+            let currentHour = new Date().getHours(); //get current hour
+
+            if (currentHour >= 5 && currentHour < 12) {
+                h2.textContent = 'Good morning';
+            } else if (currentHour >= 12 && currentHour < 18) {
+                h2.textContent = 'Good afternoon';
+            } else {
+                h2.textContent = 'Good evening';
+            }
+
+            
+
+    </script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,130 @@
+<DOCTYPE html>
+    <html><head>
+        <title>My Skills</title>
+        <meta charset="utf=8"/>
+        <style type="text/css">
+            body{
+                width:100% ;
+                background-position: center;
+                background-size: cover;
+                text-align: left;
+            }
+           
+            div{
+                width: "fit-content";
+                padding: 50px;
+               
+                margin: 70px; 
+                background-color: rgb(24, 148, 189);
+               
+            }
+            li {
+                background-color: lightgray;
+                margin-top: 2vh;
+                list-style: circle;
+                padding-left: 5px;
+                position: relative;
+                cursor: pointer;
+            }
+            #main li .hint {
+                content: 'Main skill';
+                position: absolute;
+                top: -25px;
+                right: 0;
+                background-color: rgb(45, 45, 45);
+                color: white;
+                padding: 2px;
+                border-radius: 2px;
+
+            }
+            .vanish {
+                display: none;
+            }
+            .primary-skill {
+                background-color: lightcyan;
+            }
+            h1{
+                font-family: Times, serif;
+                font-size: xx-large;
+                color: black;
+            }
+            footer{
+                width:50%;
+                padding: 5px;
+                border: 2px solid rgb(157, 201, 1);
+                margin: 2px; 
+                background-color: lightblue; 
+                font-style: italic;
+                font-size: large;
+                color: black;
+           }
+           fieldset{
+               background-color: rgb(185, 190, 164);
+           }
+        </style>
+    </head>
+    <body>
+
+        <fieldset>
+        <div>
+            <h1> My Skills </h1>
+        
+                <ol id="main">
+                    <li class="primary-skill">C Programing <span class="hint vanish">Main Skill</span></li>
+                    <li>Web designing using html, css, and javascript<span class="hint vanish">Main Skill</span></li>
+                    <li >Computer hardware and software maintanance<span class="hint vanish">Main Skill</span></li>
+                    
+                </ol>
+                <h2>Other skills</h2>
+                <ol>
+                    <li>tilling</li>
+                    <li>Wall plastering</li>
+                    <li>Water proofing</li>
+                    <li>Brick laying</li>
+                    <li>paving installation</li>
+                </ol>
+            
+                <form>
+                   
+                    <button><a href="index.html">Go Home</a></button>
+                </form>
+        </div>
+    
+                <br></br> 
+        <center>
+            <footer>
+                &copy;hezronsavia2@gmail.com (0991896718)
+            </footer>
+        </center>
+    </fieldset>
+    
+    <script>
+
+        // select first element in main skills list
+          let primary_skill = document.getElementsByClassName('primary-skill')[0];
+
+          //toggle style every second to attain attention
+          setInterval(() => {
+            primary_skill.classList.toggle('primary-skill');
+          }, 1000);
+
+          //main skills lis container
+          let main_skill_container = document.getElementById('main');
+          
+          //iterate through each child element in list containe selected above and attach event handlers to it
+          for(let child of main_skill_container.children){
+            child.onmouseover = function() {
+                child.lastElementChild.classList.remove('vanish');
+            }
+
+            child.onmouseout = function () {
+                  child.lastElementChild.classList.add('vanish');
+              }
+          }
+
+    </script>
+    </body>
+           
+    
+    
+    </html>

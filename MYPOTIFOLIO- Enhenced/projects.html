@@ -1,0 +1,97 @@
+<DOCTYPE html>
+    <html><head>
+        <title>My Projects</title>
+        <meta charset="utf=8"/>
+        <style type="text/css">
+            body{
+                min-height: fit-content;
+                width:100% ;
+                background-position: center;
+                background-size: cover;
+                text-align: left;
+            }
+            
+            div{
+                width: "fit-content";
+                padding: 50px;
+                border: 1px solid rgb(8, 8, 5);
+                margin: 50px; 
+                background-color: lightblue;
+                position: relative;
+            }
+            h1{
+                font-family: Times, serif;
+                font-size: xx-large;
+                color: black;
+                
+            }
+            .hide {
+                display: none;
+            }
+            input[type="text"] {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                height: 4vh;
+            }
+            footer{
+                width:50%;
+                padding: 5px;
+                border: 2px solid rgb(19, 24, 3);
+                margin: 2px; 
+                background-color: lightblue; 
+                font-style: italic;
+                font-size: large;
+                color: black;
+           }
+           fieldset{
+               background-color: rgb(185, 190, 164);
+           }
+        </style>
+    </head>
+    <body>
+
+        <fieldset>
+        <div>
+            <h1> Look at My Projects </h1>
+                    <ol>
+                        <li >Creating a web page</li>
+                        <li >Creating a potifolio</li>
+                        
+                    </ol>
+                <form>
+                    <button><a href="index.html">Go Home</a></button>
+                    <input class="searchfield" type="text" placeholder="search">
+                </form>
+        </div>
+    
+                <br></br>
+        <center>
+            <footer>
+                &copy;hezronsavia2@gmail.com (0991896718)
+            </footer>
+        </center>
+    </fieldset>
+    
+    <script>
+        document.querySelectorAll('li').forEach(li => {
+             li.setAttribute('class', '');
+        });
+
+        let searchField = document.querySelector('.searchfield');
+
+        searchField.onkeyup = function() {
+            document.querySelectorAll('li').forEach(li => {
+                if(!(li.innerHTML.toLocaleLowerCase().includes(searchField.value))){
+                    li.classList.add('hide')
+                }else{
+                    li.classList.remove('hide')
+                }
+            })
+        }
+    </script>
+    </body>
+           
+    
+    
+    </html>
