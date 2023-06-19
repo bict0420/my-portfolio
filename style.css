@@ -1,0 +1,51 @@
+body {
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    scroll-behavior: smooth;
+    background-repeat: no-repeat;
+}
+
+a{
+    text-decoration: none;
+    color: darkslateblue;
+    font-size: large;
+}
+
+
+a:visited{
+    color: rgb(0, 117, 111);
+    text-decoration: none;
+}
+div{
+    width: "fit-content";
+    padding: 50px;
+    box-shadow: 1px 1px 4px 4px rgba(250, 250, 250, 0.825);
+    margin: 50px; 
+    background-color: darkcyan;
+
+}
+h1{
+    font-family: Times, serif;
+    font-size: xx-large;
+    color: black;
+}
+button {
+    padding: 5px 15px;
+    cursor: pointer;
+}
+fieldset {
+    background-color: rgba(0, 0, 0, 0.234);
+    border: none;
+}
+footer{
+    width:50%;
+    padding: 5px;
+    border: 2px inset black;
+    margin: 2px; 
+    background-color: rgba(0, 0, 0, 0.585); 
+    font-style: italic;
+    font-size: large;
+    color: white;
+    font-size: large;
+}
